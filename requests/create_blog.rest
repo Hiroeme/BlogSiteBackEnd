@@ -1,9 +1,15 @@
 POST http://localhost:3003/api/blogs 
 content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vbW8iLCJpZCI6IjY2YTQyZDhhZGE5Njk0NWVmNjg1OTUwNSIsImlhdCI6MTcyMjA1NjA4NCwiZXhwIjoxNzIyMDU5Njg0fQ.WcIB5XyeXFSel3BeRCohkp6AmF5yuQ20GX04lAu24T4
 
 {
-  "title": "How to Play",
-  "author": "Wilbo",
-  "url": "N/A",
-  "likes": 2
+  "title": "Hi I am momo1",
+  "author": "Momo",
+  "url": "google.com",
+  "likes": 4,
+  "userId": "66a42d8ada96945ef6859505"
 }
+
+###
+DELETE http://localhost:3003/api/blogs/66a43f259bd3c7953e55425c
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik1vbW8iLCJpZCI6IjY2YTQyZDhhZGE5Njk0NWVmNjg1OTUwNSIsImlhdCI6MTcyMjA1NjA4NCwiZXhwIjoxNzIyMDU5Njg0fQ.WcIB5XyeXFSel3BeRCohkp6AmF5yuQ20GX04lAu24T4
