@@ -26,7 +26,10 @@ blogsRouter.post('/', middleware.userExtractor, async (request, response) => {
 
   const blog = new Blog({
     ...body,
-    user: user.id
+    user: {
+      id: user.id,
+      username: user.username
+    }
   })
 
   const savedBlog = await blog.save()
@@ -43,8 +46,9 @@ blogsRouter.delete('/:id', middleware.userExtractor, async (request, response) =
   const blog = await Blog.findById(request.params.id)
 
   const userId = request.user.id
+  // console.log(blog.user.toString(),userId.toString())
 
-  if ( blog.user.toString() !== userId.toString()) {
+  if ( blog.user.id.toString() !== userId.toString()) {
     return response.status(400).json({ error: 'user is not the owner of the blog' })
   }
   await Blog.findByIdAndDelete(request.params.id)
